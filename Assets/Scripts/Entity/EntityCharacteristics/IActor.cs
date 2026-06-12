@@ -8,8 +8,8 @@ namespace Assets.Scripts.Model
 {
     public interface IActor
     {
-        public void UseAbility(List<IDamagable> attacked) { foreach (var a in attacked) { UseAbility(a); } }
-        public void UseAbility(IDamagable attacked);
+        public void UseAbility(List<LivingEntity> attacked, Ability ability) { foreach (var a in attacked) { UseAbility(a, ability); } }
+        public void UseAbility(LivingEntity attacked, Ability ability);
         public void MakeTurn();
     }
 }

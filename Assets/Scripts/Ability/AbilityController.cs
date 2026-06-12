@@ -7,36 +7,33 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class AbilityController
+    public static class AbilityController
     {
-        private Dictionary<string, Ability> abilities { get; set; }
-        public AbilityController()
-        {
-            abilities = new Dictionary<string, Ability>();
-        }
+        private static Dictionary<string, Ability> abilities = new Dictionary<string, Ability>();
 
-        public Ability GetAbility(string name)
+
+        public static Ability GetAbility(string name)
         {
             return abilities[name];
         }
 
-        public void InsertAbilities()
+        public static void InsertAbilities()
         {
             abilities["soul_blast"] = new Ability(SoulBlast);
-            abilities["fire_blast"] = new Ability(SoulBlast);
+            abilities["fire_blast"] = new Ability(FireBall);
         }
 
-        public bool SoulBlast(LivingEntity actor, LivingEntity victim)
+        public static bool SoulBlast(LivingEntity actor, LivingEntity victim)
         {
             if (victim is null) return false;
             victim.TakeDamage((actor.chars.baseDamage + 15));
             return true;
         }
 
-        public bool FireBall(LivingEntity actor, LivingEntity victim)
+        public static bool FireBall(LivingEntity actor, LivingEntity victim)
         {
             if (victim is null) return false;
-            victim.TakeDamage((actor.chars.baseDamage + 15));
+            victim.TakeDamage((actor.chars.baseDamage + 20));
             return true;
         }
     }
