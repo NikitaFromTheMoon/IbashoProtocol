@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d2e353be7cc7b6f459ab6b04623b73af
+guid: fe86551f7ac0f8d4c8528eba9ef20b13
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3757088724946017621
-    second: Mc_house_icon_0
+      213: -4954824224471210588
+    second: Mc_house_icon 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mc_house_icon_0
+      name: Mc_house_icon 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 192
-        height: 133
+        width: 46
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 55d58081a4cd32430800000000000000
-      internalID: 3757088724946017621
+      spriteID: 4a5a4ef9e9dec3bb0800000000000000
+      internalID: -4954824224471210588
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mc_house_icon_0: 3757088724946017621
+      Mc_house_icon 1_0: -4954824224471210588
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -9,7 +9,7 @@ namespace Assets.Scripts.UiController.UIButtonController
         private BattleControllerEP bc;
         [InspectorName(displayName:"Player")] public LivingEntity entity;
         public string abilityName;
-        private Ability ability;
+        public Ability ability;
 
         void Start()
         {

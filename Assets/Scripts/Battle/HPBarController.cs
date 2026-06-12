@@ -42,7 +42,7 @@ namespace Assets.Scripts.Battle
         public void AdjustHPBar()
         {
             Debug.Log($"Adjusting HP for {entity.name}");
-            if (!entity.isDead)
+            if (!entity.IsDead)
                 currentLength = (((entity.HP + 0f) / entity.chars.baseHp) * maxLength);
             else 
                 currentLength = 0;

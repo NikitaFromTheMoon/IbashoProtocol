@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4d43defc359dc104b9a06eae15836f78
+guid: c39450d0982be1c45aad6d12f65a5877
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4603961671730600071
-    second: Police_station_icon_0
+      213: 5031594827904666459
+    second: Police_station_icon 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Police_station_icon_0
+      name: Police_station_icon 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 254
-        height: 125
+        width: 62
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 78814036fbe84ef30800000000000000
-      internalID: 4603961671730600071
+      spriteID: b5b43f266d0d3d540800000000000000
+      internalID: 5031594827904666459
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Police_station_icon_0: 4603961671730600071
+      Police_station_icon 1_0: 5031594827904666459
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

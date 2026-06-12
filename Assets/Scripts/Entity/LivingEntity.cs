@@ -11,9 +11,6 @@ namespace Assets.Scripts.Model
 {
     public class LivingEntity : MonoBehaviour, IDamagable, IActor
     {
-        public EntityChar chars;
-        public bool isDead => (currentHP <= 0);
-
         private List<Effect> underEffects;
         private LivingEntityTeam team;
         private LivingEntityTeam enemyTeam;
@@ -24,8 +21,9 @@ namespace Assets.Scripts.Model
         int initiative;
         HPBarController hpbc;
 
-
-
+        public EntityChar chars;
+        public bool IsEnemy;
+        public bool IsDead => (currentHP <= 0);
         public Animator Animator => animator;
         public LivingEntityTeam Team => team;
         public LivingEntityTeam Enemies => enemyTeam;
@@ -38,24 +36,26 @@ namespace Assets.Scripts.Model
             animator = GetComponent<Animator>();
             hpbc = GetComponentInChildren<HPBarController>();
             Debug.Log($"hpbc is {hpbc}", this);
+            
 
         }
         public void TakeDamage(int value)
         {
-            if (isDead) this.gameObject.SetActive(false);
+            if (IsDead) this.gameObject.SetActive(false);
             currentHP -=value;
             hpbc.AdjustHPBar();
+            //animator.SetTrigger(0);
         }
 
         public void UseAbility(LivingEntity attacked, Ability ability) 
         {
             ability.GetAction.Invoke(this, attacked);
-            
             //Debug.Log(@"Ability {abilityName} invoked");
         }
 
         public void MakeTurn()
         {
+
 
         }
 

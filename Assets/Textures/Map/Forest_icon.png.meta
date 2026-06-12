@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 18a5545a2e6e9e84b80cc0d2da0690fc
+guid: f3aa5ddbeb5501443b307e737f561bf4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6749714042769031200
-    second: Forest_icon_0
+      213: -2401004230527179930
+    second: Forest_icon 1_0
   - first:
-      213: 5839022806923419457
-    second: Forest_icon_1
+      213: 6166153546038973979
+    second: Forest_icon 1_1
   - first:
-      213: -7605875050945213835
-    second: Forest_icon_2
-  - first:
-      213: 6451615858174072470
-    second: Forest_icon_3
-  - first:
-      213: 1929578937016084855
-    second: Forest_icon_4
+      213: -6157434245904545889
+    second: Forest_icon 1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -87,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Forest_icon_0
+      name: Forest_icon 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 332
-        width: 34
-        height: 23
+        y: 79
+        width: 9
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,86 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ef3941f6d23452a0800000000000000
-      internalID: -6749714042769031200
+      spriteID: 663a7379f5bedaed0800000000000000
+      internalID: -2401004230527179930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Forest_icon_1
+      name: Forest_icon 1_1
       rect:
         serializedVersion: 2
-        x: 387
-        y: 351
-        width: 19
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 14f13127e40680150800000000000000
-      internalID: 5839022806923419457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Forest_icon_2
-      rect:
-        serializedVersion: 2
-        x: 515
-        y: 265
-        width: 76
-        height: 101
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 57a876650f0827690800000000000000
-      internalID: -7605875050945213835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Forest_icon_3
-      rect:
-        serializedVersion: 2
-        x: 569
-        y: 172
-        width: 494
-        height: 199
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6961ebdd07eb88950800000000000000
-      internalID: 6451615858174072470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Forest_icon_4
-      rect:
-        serializedVersion: 2
-        x: 164
+        x: 39
         y: 0
-        width: 13
-        height: 16
+        width: 103
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +156,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7796be2e1dd37ca10800000000000000
-      internalID: 1929578937016084855
+      spriteID: b161b2efaf3929550800000000000000
+      internalID: 6166153546038973979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_icon 1_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 41
+        width: 119
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f97c8054d266c8aa0800000000000000
+      internalID: -6157434245904545889
       vertices: []
       indices: 
       edges: []
@@ -238,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Forest_icon_0: -6749714042769031200
-      Forest_icon_1: 5839022806923419457
-      Forest_icon_2: -7605875050945213835
-      Forest_icon_3: 6451615858174072470
-      Forest_icon_4: 1929578937016084855
+      Forest_icon 1_0: -2401004230527179930
+      Forest_icon 1_1: 6166153546038973979
+      Forest_icon 1_2: -6157434245904545889
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
