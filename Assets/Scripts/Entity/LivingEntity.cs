@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Assets.Scripts.Model
@@ -11,12 +12,14 @@ namespace Assets.Scripts.Model
     public class LivingEntity : MonoBehaviour, IDamagable, IActor
     {
         public EntityChar chars;
-        private bool isDead => currentHP <= 0;
+        public bool isDead => (currentHP <= 0);
+
         private List<Effect> underEffects;
         private LivingEntityTeam team;
         private LivingEntityTeam enemyTeam;
         private Animator animator;
         private int inTeamPos;
+        private Logger logger;
         int currentHP;
         int initiative;
         HPBarController hpbc;
@@ -34,10 +37,12 @@ namespace Assets.Scripts.Model
             underEffects = new List<Effect>();
             animator = GetComponent<Animator>();
             hpbc = GetComponentInChildren<HPBarController>();
+            Debug.Log($"hpbc is {hpbc}", this);
+
         }
         public void TakeDamage(int value)
         {
-            if (isDead) return;
+            if (isDead) this.gameObject.SetActive(false);
             currentHP -=value;
             hpbc.AdjustHPBar();
         }
@@ -45,6 +50,8 @@ namespace Assets.Scripts.Model
         public void UseAbility(LivingEntity attacked, Ability ability) 
         {
             ability.GetAction.Invoke(this, attacked);
+            
+            //Debug.Log(@"Ability {abilityName} invoked");
         }
 
         public void MakeTurn()

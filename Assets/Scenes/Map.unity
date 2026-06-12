@@ -1138,8 +1138,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 532.48157, y: 103.0202}
-  m_SizeDelta: {x: 748.5003, y: 423.0092}
+  m_AnchoredPosition: {x: 705, y: -0.000030518}
+  m_SizeDelta: {x: 371.559, y: 209.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1209814881
 MonoBehaviour:
@@ -1205,7 +1205,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 28590679944971957, guid: 577bac0446c14ab4aad7c9f680ab4369, type: 3}
+  m_Sprite: {fileID: 3757088724946017621, guid: d2e353be7cc7b6f459ab6b04623b73af, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1303,8 +1303,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 444.8767, y: -280.80676}
-  m_SizeDelta: {x: 612.2405, y: 202.3435}
+  m_AnchoredPosition: {x: 615.7588, y: -393.36}
+  m_SizeDelta: {x: 333.5267, y: 164.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294614947
 MonoBehaviour:
@@ -1370,7 +1370,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dee3ed588cf4df14c95aee91430cfc5a, type: 3}
+  m_Sprite: {fileID: 4603961671730600071, guid: 4d43defc359dc104b9a06eae15836f78, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1732,6 +1732,7 @@ GameObject:
   - component: {fileID: 1838189582}
   - component: {fileID: 1838189584}
   - component: {fileID: 1838189583}
+  - component: {fileID: 1838189585}
   m_Layer: 5
   m_Name: MapBG_central
   m_TagString: Untagged
@@ -1800,6 +1801,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838189581}
   m_CullTransparentMesh: 1
+--- !u!114 &1838189585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838189581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6fd946bd35b0a418dbc853a4891895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuController
 --- !u!1 &1914818037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2054,8 +2067,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -465, y: -301.09998}
-  m_SizeDelta: {x: 291.5369, y: 69.0499}
+  m_AnchoredPosition: {x: 15, y: -15.26}
+  m_SizeDelta: {x: 505.6924, y: 240.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2011152171
 MonoBehaviour:
@@ -2100,7 +2113,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2011152172}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1838189585}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: MoveToScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Battle
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2011152172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2121,8 +2146,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 4932961985448497554, guid: be8be451103400c439e9610571a582ef, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
