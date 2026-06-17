@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f367d3a510c604240b33330c527106ca, type: 3}
+  m_Name: Prologue
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.SceneControll.BattleSettingsData
+  EnemyTeams:
+  - {fileID: 11400000, guid: aa2399bd2aee6994cb4c2aedd962f5a0, type: 2}
+  - {fileID: 11400000, guid: d53a8de5bfb761447bf0641183406f1b, type: 2}
+  - {fileID: 11400000, guid: aa2399bd2aee6994cb4c2aedd962f5a0, type: 2}
+  - {fileID: 11400000, guid: c5b8def24ced331419a8b357b73b58ec, type: 2}
+  Background: {fileID: 21300000, guid: ced565788608b8a4b88e47ec4c2b9fb6, type: 3}
+  PlayerName: player_prologue

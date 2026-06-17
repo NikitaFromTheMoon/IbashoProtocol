@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Battle;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,11 @@ namespace Assets.Scripts.Model
     public class LivingEntityTeam
     {
         public List<LivingEntity> members { get; set; }
+        public TeamController controller { get; set; }
 
-
+        public LivingEntityTeam()
+        {
+            members = new List<LivingEntity>();
+        }
     }
 }
