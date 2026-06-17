@@ -9,25 +9,19 @@ namespace Assets.Scripts.UiController.UIButtonController
         private BattleControllerEP bc;
         [InspectorName(displayName:"Player")] public LivingEntity entity;
         public string abilityName;
-        public Ability ability;
+        
+        public bool isEmpty => entity is null;
 
-        void Start()
+        public void UseAbility()
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
-        public void UseAbility(LivingEntity enemy)
-        {
-            if (ability is null) 
-                ability = AbilityController.GetAbility(abilityName);
-            entity.UseAbility(enemy, ability);
+            entity.UseAbility(bc.selected, abilityName);
             Debug.Log(@"Ability {abilityName} was clicked!");
+        }
+
+        public void SetAbility(string newAbility)
+        {
+            //var n = Resources.Load("ScriptableObject/"+newAbility);
+            abilityName = newAbility;
         }
     }
 }

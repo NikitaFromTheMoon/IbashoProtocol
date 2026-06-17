@@ -10,6 +10,9 @@ namespace Assets.Scripts.Model
     {
         public List<LivingEntity> members { get; set; }
 
-
+        public LivingEntityTeam()
+        {
+            members = new List<LivingEntity>();
+        }
     }
 }

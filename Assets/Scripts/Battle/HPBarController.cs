@@ -21,10 +21,6 @@ namespace Assets.Scripts.Battle
             sprite = GetComponent<SpriteRenderer>();
             maxLength = sprite.size.x;
             currentLength = maxLength;
-            Debug.Log(Transform);
-            Debug.Log($"player HP: {parent.HP}");
-            Debug.Log(currentLength);
-            Debug.Log(maxLength);
 
         }
 
@@ -43,12 +39,11 @@ namespace Assets.Scripts.Battle
         {
             Debug.Log($"Adjusting HP for {entity.name}");
             if (!entity.IsDead)
-                currentLength = (((entity.HP + 0f) / entity.chars.baseHp) * maxLength);
+                currentLength = (((entity.HP + 0f) / entity.Characteristics.baseHp) * maxLength);
             else 
                 currentLength = 0;
             Debug.Log($"New length is {currentLength}");
             sprite.size = new Vector2 (currentLength, sprite.size.y);
-            //Transform.sizeDelta = new Vector2(currentLength, Transform.sizeDelta.y);
 
         }
     }
