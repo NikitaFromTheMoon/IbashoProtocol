@@ -12,8 +12,8 @@ namespace Assets.Scripts.Model
         {
         }
 
-        public EntityChar OnNewTurn(EntityChar entityChar) { return entityChar; }
-        public EntityChar OnDurationStart(EntityChar entityChar) { return entityChar; }
-        public EntityChar OnDurationEnd(EntityChar entityChar) { return entityChar; }
+        public virtual EntityChar OnNewTurn(EntityChar entityChar) { return entityChar; }
+        public virtual EntityChar OnDurationStart(EntityChar entityChar) { return entityChar; }
+        public virtual EntityChar OnDurationEnd(EntityChar entityChar) { return entityChar; }
     }
 }

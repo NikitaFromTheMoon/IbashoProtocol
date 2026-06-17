@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Boss
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Battle.Battle.EnemyTeamData
   enemies:
-  - 
-  - 
+  - cultist
+  - cultist_boss

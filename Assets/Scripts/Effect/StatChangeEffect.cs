@@ -17,7 +17,8 @@ namespace Assets.Scripts.Effect
             type = (string)chars["type"];
         }
 
-        public EntityChar OnNewTurn(EntityChar entityChar)
+
+        override public EntityChar OnNewTurn(EntityChar entityChar)
         {
             if (hpChange > 0)
                 entityChar.baseHp += hpChange;

@@ -16,6 +16,7 @@ namespace Assets.Scripts.Battle
         void Awake()
         {
             team = new LivingEntityTeam();
+            team.controller = this;
         }
 
         // Update is called once per frame

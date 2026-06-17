@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Model
 {
-    public class LivingEntity : MonoBehaviour, IDamagable
+    public class LivingEntity : MonoBehaviour
     {
         private List<AbstractEffect> underEffects;
         private LivingEntityTeam enemyTeam;
@@ -52,11 +52,20 @@ namespace Assets.Scripts.Model
 
         }
 
+        public void RechargeMana()
+        {
+            currentMana = 100;
+        }
+
         public void TakeDamage(int value)
         {
-            if (IsDead) this.gameObject.SetActive(false);
-            currentHP -= value;
-            hpbc.AdjustHPBar();
+            animator.SetTrigger("damaged");
+            currentHP -= Math.Max(0, (value - Characteristics.baseArmor));
+
+            if (IsDead) 
+                team.controller.RemoveEntity(this);
+            else
+                hpbc.AdjustHPBar();
         }
 
         public void TakeEffect(AbstractEffect effect)
@@ -80,16 +89,16 @@ namespace Assets.Scripts.Model
             return null;
         }
 
-        public bool UseAbility(LivingEntity attacked, string ability)
+        public void UseAbility(LivingEntity attacked, string abilityName)
         {
-            var data = Resources.Load<AbilityData>("ScriptableObject/" + ability);
+            var data = Resources.Load("ScriptableObjects/Abilities/" + abilityName) as AbilityData;
             //attacked.TakeDamage(Characteristics.baseDamage);
-            //animator.SetTrigger("attacking");
+            animator.SetTrigger("attacking");
             //if (this.currentMana < data.manaCost)
                 //return false;
             currentMana -= data.manaCost;
-            AbilityController.ConjureAbility(this, attacked, data);
-            return true;
+            StartCoroutine(AbilityController.ConjureAbility(this, attacked, data));
+            //return true;
         }
 
         public void setEnemies(LivingEntityTeam team)
@@ -116,18 +125,20 @@ namespace Assets.Scripts.Model
                 for (var i = timesToMove; i > 0; i--)
                 {
                     int skip = (int)(UnityEngine.Random.value * 1000);
-                    var target = enemyTeam.members[skip % enemyTeam.members.Count];
+                    var target = enemyTeam.members.Where(m => m is not null && !m.IsUnityNull()).Last();
                     if (baseChars.abilities == null || baseChars.abilities.Count == 0)
                         break;
                     var attack = baseChars.abilities.First() /*[skip % chars.abilities.Count]*/;
 
+                    Debug.LogWarning($"Badass for me, {this.name}, are team: {string.Join(' ', enemyTeam.members.Select(m => m.name))}");
                     UseAbility(target, attack);
-                 yield return new WaitForSeconds(2);
+                    yield return new WaitForSeconds(2);
 
                 }
             }
             else
             {
+                Debug.Log("Player's turn began!");
                 Flag = true;
                 while (Flag)
                 {

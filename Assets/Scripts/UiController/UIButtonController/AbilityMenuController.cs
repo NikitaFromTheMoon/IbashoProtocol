@@ -13,8 +13,9 @@ namespace Assets.Scripts.UiController.UIButtonController
         public List<AbilityButtonController> buttons;
         public List<string> abilities;
         public LivingEntity player;
-        
-        void Start()
+        public bool playersTurn;
+
+        void Awake()
         {
             buttons = GetComponentsInChildren<AbilityButtonController>().ToList();
         }
@@ -28,19 +29,23 @@ namespace Assets.Scripts.UiController.UIButtonController
         public void SetAbilities(List<string> abs)
         {
             abilities = abs.ToArray().ToList();
+            Debug.Log($"NO more buttons :{ buttons.Count }");
             foreach (var button in buttons)
             {
-                if (abilities.Count != 0)
+                if (abs.Count != 0)
                 {
-                    var data = Resources.Load<AbilityData>("ScriptableObject/Abilities/"+abs.Last());
-
+                    var data = Resources.Load<AbilityData>("ScriptableObjects/Abilities/" + abs?.Last());
+                    Debug.Log($"Resorce {data.abilityName} loaded, common image: {data.sprite.name}, mana cost: {data.manaCost}");
                     button.abilityName = data.abilityName;
                     button.entity = player;
-                    button.GetComponent<Image>().sprite = data.sprite;
-                    var text = button.GetComponent<TextMeshPro>();
-                    text.text = (data.manaCost+"");
+                    var im = button.GetComponentsInChildren<Image>().Where((i) => (i.gameObject != gameObject)).Last();
+                    im.sprite = data.sprite;
+                    im.color = Color.white;
+
+                    var text = button.GetComponentInChildren<TextMeshProUGUI>(true);
+                    text.text = data.manaCost + "";
                     text.gameObject.SetActive(true);
-                    abs.Remove(data.abilityName);
+                    abs.Remove(abs.Last());
                 }
                 else
                 {

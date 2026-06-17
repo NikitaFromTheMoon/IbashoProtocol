@@ -34,7 +34,7 @@ namespace Assets.Scripts.Battle
         public LivingEntity RemoveEntity()
         {
             var e = entity;
-            Destroy(entity);
+            Destroy(entity.gameObject);
             entity = null;
             SetVisibility(false);
             return e;
@@ -47,7 +47,8 @@ namespace Assets.Scripts.Battle
             if (toLeave == entity)
             {
                 entity = null;
-                Destroy(toLeave);
+                Destroy(toLeave.gameObject);
+                SetVisibility(false);
             }
             return entity;
         }

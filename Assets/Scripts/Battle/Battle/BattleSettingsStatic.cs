@@ -15,9 +15,11 @@ namespace Assets.Scripts.Battle
 
         public static void SetData(BattleSettingsData data)
         {
-            Debug.Log($"Battle dats is set on {data}");
             settings = data;
             unlockedAbilities["soul_blast"] = true;
+            unlockedAbilities["base_attack"] = true;
+
+            Debug.Log($"Battle data is set on {data}");
         }
     }
 }

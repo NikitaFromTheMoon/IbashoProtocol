@@ -8,23 +8,28 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public static class AbilityController
+    public class AbilityController
     {
         private static Dictionary<string, Ability> abilities;
+        //If I'l ever remake it into a Singleton
+        //private static static AbilityController thisController;
+        //private static AbilityController() { abilities = new Dictionary<string, Ability>(); thisController = this; }
 
 
-        public static IEnumerable ConjureAbility(LivingEntity caster, LivingEntity victim, AbilityData ability)
+        public static IEnumerator ConjureAbility(LivingEntity caster, LivingEntity victim, AbilityData ability)
         {
-            switch (ability.abilityName) {
+            Debug.Log($"Caster {caster} is using an ability {ability} on a victim {victim}");
+            switch (ability.abilityName)
+            {
                 case "soul_blast":
                     SoulBlast(caster, victim);
-                    yield return new WaitForSeconds(1.5f);
+                    victim.Animator.SetTrigger("damaged");
                     break;
                 case "base_attack":
                     BaseAttack(caster, victim);
-                    yield return new WaitForSeconds(1.5f);
                     break;
             }
+            yield return new WaitForSeconds(1.52f);
         }
 
         public static bool SoulBlast(LivingEntity actor, LivingEntity victim)

@@ -7,7 +7,9 @@ using UnityEngine.UIElements;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject externalMenu;
+    public GameObject pauseMenu;
+    public GameObject loseMenu;
+    public GameObject victoryMenu;
 
     Canvas currentCanvas;
 
@@ -37,8 +39,18 @@ public class MenuController : MonoBehaviour
         BattleSettingsStatic.SetData(data);
     }
 
-    public void ShowExternalMenu()
+    public void ShowPauseMenu()
     {
-        externalMenu.SetActive(true);
+        pauseMenu.SetActive(true);
+    }
+
+    public void ShowVictoryMenu()
+    {
+        victoryMenu.SetActive(true);
+    }
+
+    public void ShowLoseMenu()
+    {
+        loseMenu.SetActive(true);
     }
 }
