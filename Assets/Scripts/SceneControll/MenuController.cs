@@ -10,6 +10,8 @@ public class MenuController : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject loseMenu;
     public GameObject victoryMenu;
+    public TextAsset asset0;
+    public TextAsset asset1;
 
     Canvas currentCanvas;
 
@@ -28,15 +30,26 @@ public class MenuController : MonoBehaviour
         LivingEntity.Flag = false;
     }
 
+    public void MoveToNextGameplayScene()
+    {
+        SceneManager.LoadSceneAsync(StaticNextSceneSetting.SceneName);
+    }
+
     public void MoveToScene(string name)
     {
-        //Debug.Log($"Moved to Scene {name}");
         SceneManager.LoadSceneAsync(name);
     }
 
     public void SetBattleData(BattleSettingsData data)
     {
         BattleSettingsStatic.SetData(data);
+    }
+
+    public void SetDialogueData(string filename)
+    {
+        StaticNextSceneSetting.menu = this;
+        StaticNextSceneSetting.Init();
+        //StaticNextSceneSetting.SetInkData(filename);
     }
 
     public void ShowPauseMenu()
@@ -52,5 +65,11 @@ public class MenuController : MonoBehaviour
     public void ShowLoseMenu()
     {
         loseMenu.SetActive(true);
+    }
+
+    public void NextScene()
+    {
+
+        StaticNextSceneSetting.MoveToNextScene();
     }
 }

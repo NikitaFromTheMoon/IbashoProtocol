@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365b451ad30865b4eac73f0341f6d81f, type: 3}
   m_Name: Cultist
   m_EditorClassIdentifier: Assembly-CSharp::EntityChar
-  baseHp: 10
-  baseArmor: 0
-  baseDamage: 4
+  baseHp: 25
+  baseArmor: 3
+  baseDamage: 8
   unlocalizedName: cultist
   idleAnimation: {fileID: 0}
   attackAnimation: {fileID: 0}

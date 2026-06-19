@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battle.unity
     guid: a35599d00667aa44eaa0ddf58df65bc8
+  - enabled: 1
+    path: Assets/Scenes/Novelle.unity
+    guid: b1e34716cc587944e961dde2d3607256
   m_configObjects: {}

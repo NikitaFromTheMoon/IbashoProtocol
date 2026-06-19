@@ -10,7 +10,7 @@ namespace Assets.Scripts.UiController.UIButtonController
     public class AbilityButtonController : MonoBehaviour
     {
         private AbilityMenuController menu;
-        private BattleControllerEP bc;
+        private BattleManager bc;
         private SpriteRenderer image;
         [InspectorName(displayName:"Player")] public LivingEntity entity;
         public string abilityName;
@@ -20,7 +20,7 @@ namespace Assets.Scripts.UiController.UIButtonController
         private void Awake()
         {
             menu = GetComponentInParent<AbilityMenuController>();
-            bc = GetComponentInParent<BattleControllerEP>();
+            bc = GetComponentInParent<BattleManager>();
         }
 
         public void UseAbility()

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Assets.Scripts.Dialogue
+namespace Assets.Scripts.Dialogues
 {
     public class MainInstaller : Zenject.MonoInstaller
     {

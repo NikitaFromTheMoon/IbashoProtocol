@@ -132,8 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5452a50838955d44eb727e5648961839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Scripts.Model.LivingEntity
-  chars: {fileID: 11400000, guid: e0a5d86df922fcb4abd810543ed19f75, type: 2}
+  baseChars: {fileID: 11400000, guid: e0a5d86df922fcb4abd810543ed19f75, type: 2}
   IsEnemy: 0
+  IsAIControlled: 0
   initiative: 0
 --- !u!1 &2270472796380626561
 GameObject:

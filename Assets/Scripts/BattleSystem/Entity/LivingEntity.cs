@@ -18,7 +18,7 @@ namespace Assets.Scripts.Model
         private LivingEntityTeam enemyTeam;
         private Animator animator;
         private int timesToMove;
-        private Logger logger;
+        private BattleManager battleManager;
         int currentHP;
         int currentMana;
         HPBarController hpbc;
@@ -43,6 +43,7 @@ namespace Assets.Scripts.Model
             IsAIControlled = true;
             underEffects = new List<AbstractEffect>();
             animator = GetComponent<Animator>();
+            battleManager = GetComponent<BattleManager>();
             hpbc = GetComponentInChildren<HPBarController>();
             Debug.Log($"hpbc is {hpbc}", this);
         }
@@ -57,7 +58,7 @@ namespace Assets.Scripts.Model
             animator.SetTrigger("damaged");
             currentHP -= Math.Max(0, (value - Characteristics.baseArmor));
 
-            if (IsDead) 
+            if (IsDead && !baseChars.unlocalizedName.Contains("play")) 
                 team.controller.RemoveEntity(this);
             else
                 hpbc.AdjustHPBar();
@@ -86,6 +87,7 @@ namespace Assets.Scripts.Model
 
         public void UseAbility(LivingEntity attacked, string abilityName)
         {
+            timesToMove -= 1;
             var data = Resources.Load("ScriptableObjects/Abilities/" + abilityName) as AbilityData;
             animator.SetTrigger("attacking");
             currentMana -= data.manaCost;
@@ -109,11 +111,11 @@ namespace Assets.Scripts.Model
 
         public IEnumerator MakeTurn()
         {
+            timesToMove = 1;
             if (IsAIControlled)
             {
-                timesToMove = 1;
 
-                for (var i = timesToMove; i > 0; i--)
+                while (timesToMove > 0)
                 {
                     int skip = (int)(UnityEngine.Random.value * 1000);
                     var target = enemyTeam.members.Where(m => m is not null && !m.IsUnityNull()).Last();
@@ -129,12 +131,14 @@ namespace Assets.Scripts.Model
             }
             else
             {
+                timesToMove++;
                 Debug.Log("Player's turn began!");
                 Flag = true;
-                while (Flag)
+                while (Flag && timesToMove > 0)
                 {
                     yield return new WaitForSeconds(0.05f);
                 }
+                Flag = false;
             }
         }
     }

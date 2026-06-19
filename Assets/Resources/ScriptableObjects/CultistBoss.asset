@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CultistBoss
   m_EditorClassIdentifier: Assembly-CSharp::EntityChar
   baseHp: 250
-  baseArmor: 10
-  baseDamage: 10
+  baseArmor: 13
+  baseDamage: 40
   unlocalizedName: cultist_boss
   idleAnimation: {fileID: 7400000, guid: ac78a7e811f365e4faba382afcc92f66, type: 2}
   attackAnimation: {fileID: 7400000, guid: 9e355283b3d3dcb4d8cf08cdb447e733, type: 2}
